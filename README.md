@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/phpmath/vector.svg?branch=master)](https://travis-ci.org/phpmath/vector)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpmath/vector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpmath/vector/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/phpmath/vector/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpmath/vector/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/55356e9b7f43bc60fe00007f/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55356e9b7f43bc60fe00007f)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/543e6009-49ee-4239-91c4-985cfdd32d50/mini.png)](https://insight.sensiolabs.com/projects/543e6009-49ee-4239-91c4-985cfdd32d50)
 
 A PHP library to work with mathematical vectors.
 
