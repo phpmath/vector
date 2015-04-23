@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e7296570db759c8aa9e0e2aa66fe2580",
+    "hash": "e1274c6a1f64e31a81c46fc4da7c267f",
     "packages": [
         {
             "name": "phpmath/bignumber",
@@ -12,20 +12,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmath/bignumber.git",
-                "reference": "f66806f4dfdc2d3b3579ed85190565ce0743d97c"
+                "reference": "be30b3140d239169492b245e4ed718eebdb6831e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/f66806f4dfdc2d3b3579ed85190565ce0743d97c",
-                "reference": "f66806f4dfdc2d3b3579ed85190565ce0743d97c",
+                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/be30b3140d239169492b245e4ed718eebdb6831e",
+                "reference": "be30b3140d239169492b245e4ed718eebdb6831e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.5",
-                "satooshi/php-coveralls": "~0.6"
+                "phpunit/phpunit": "~4.5"
             },
             "type": "library",
             "autoload": {
@@ -37,8 +36,19 @@
             "license": [
                 "MIT"
             ],
+            "authors": [
+                {
+                    "name": "Walter Tamboer",
+                    "homepage": "http://www.waltertamboer.nl",
+                    "role": "Developer"
+                }
+            ],
             "description": "A PHP library to work with big numbers.",
-            "time": "2015-04-12 18:17:24"
+            "keywords": [
+                "bignumber",
+                "math"
+            ],
+            "time": "2015-04-23 20:46:49"
         }
     ],
     "packages-dev": [
