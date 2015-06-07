@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmath/bignumber.git",
-                "reference": "5f7dd6d5d1f11b0270266c189b0b465cd11e1128"
+                "reference": "b17964e7a10875167ee52bfa51937ed185c9ecbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/5f7dd6d5d1f11b0270266c189b0b465cd11e1128",
-                "reference": "5f7dd6d5d1f11b0270266c189b0b465cd11e1128",
+                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/b17964e7a10875167ee52bfa51937ed185c9ecbb",
+                "reference": "b17964e7a10875167ee52bfa51937ed185c9ecbb",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "bignumber",
                 "math"
             ],
-            "time": "2015-05-11 18:49:03"
+            "time": "2015-06-07 07:14:08"
         }
     ],
     "packages-dev": [
