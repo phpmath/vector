@@ -17,7 +17,7 @@ It's recommended to install this library via [Composer](https://getcomposer.org)
 ```json
 {
     "require": {
-        "phpmath/vector": "1.0.0"
+        "phpmath/vector": "^2.0"
     }
 }
 ```
