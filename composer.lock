@@ -4,24 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aa75194424e60ee64b7aea8664725c39",
-    "content-hash": "6fcac4c7dce25803465ab04ef4388b94",
+    "hash": "148c828b8a3096960261e071692e8452",
+    "content-hash": "d684f2217f76cb641b73fb18490343ac",
     "packages": [
         {
             "name": "phpmath/bignumber",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmath/bignumber.git",
-                "reference": "bce0d553db28f6b68e0cb3f390cda929cb413efb"
+                "reference": "5ff3d4a2379c1e80f9d036712fb3003331f5a024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/bce0d553db28f6b68e0cb3f390cda929cb413efb",
-                "reference": "bce0d553db28f6b68e0cb3f390cda929cb413efb",
+                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/5ff3d4a2379c1e80f9d036712fb3003331f5a024",
+                "reference": "5ff3d4a2379c1e80f9d036712fb3003331f5a024",
                 "shasum": ""
             },
             "require": {
+                "ext-bcmath": "*",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -49,7 +50,7 @@
                 "bignumber",
                 "math"
             ],
-            "time": "2016-04-18 19:04:46"
+            "time": "2016-06-13 13:23:47"
         }
     ],
     "packages-dev": [
