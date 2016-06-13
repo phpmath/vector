@@ -22,7 +22,9 @@ class VectorUtils
 
         $result = new Vector($lft);
 
-        for ($i = 0; $i < $lft->getSize(); ++$i) {
+        $vectorSize = $lft->getSize();
+
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $result[$i]->add($rgt[$i]);
         }
 
@@ -55,9 +57,11 @@ class VectorUtils
             throw new InvalidArgumentException('Invalid vectors provided, should be of the same size.');
         }
 
+        $vectorSize = $lft->getSize();
+
         $result = new Vector($lft);
 
-        for ($i = 0; $i < $lft->getSize(); ++$i) {
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $result[$i]->subtract($rgt[$i]);
         }
 
