@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "61e7d94188ada40df818a7c0c9e9dd5c",
-    "content-hash": "d60e1917554235d54869554f2266ddc6",
+    "hash": "aa75194424e60ee64b7aea8664725c39",
+    "content-hash": "6fcac4c7dce25803465ab04ef4388b94",
     "packages": [
         {
             "name": "phpmath/bignumber",
@@ -1013,7 +1013,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.3"
+        "php": ">=5.5.9"
     },
     "platform-dev": []
 }
