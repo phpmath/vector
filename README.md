@@ -26,7 +26,7 @@ The current master branch is considered stable. The badges on top of this docume
 
 ## Requirements
 
-This library runs on PHP 5.3, PHP 5.4, PHP 5.5, PHP 5.6, PHP 7 and HHVM. This library depends on phpmath/bignumber
+This library runs on PHP 5.5, PHP 5.6, PHP 7 and HHVM. This library depends on phpmath/bignumber
 which itself depends on the GMP extension.
 
 ## Features
