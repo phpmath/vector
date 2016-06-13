@@ -49,7 +49,9 @@ class Vector extends Tuple
 
         $result = new BigNumber();
 
-        for ($i = 0; $i < $this->getSize(); ++$i) {
+        $vectorSize = $this->getSize();
+
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $value = new BigNumber($this[$i]);
             $value->multiply($vector[$i]);
 
@@ -77,12 +79,16 @@ class Vector extends Tuple
     public function getLengthSquared()
     {
         $result = new BigNumber();
-        for ($i = 0; $i < $this->getSize(); $i++) {
+
+        $vectorSize = $this->getSize();
+
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $pow = new BigNumber($this->getElement($i));
             $pow->pow(2);
 
             $result->add($pow);
         }
+
         return $result;
     }
 
@@ -103,7 +109,9 @@ class Vector extends Tuple
      */
     public function negate()
     {
-        for ($i = 0; $i < $this->getSize(); $i++) {
+        $vectorSize = $this->getSize();
+
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $this->getElement($i)->multiply(-1);
         }
 
@@ -119,7 +127,9 @@ class Vector extends Tuple
     {
         $length = $this->getLength();
 
-        for ($i = 0; $i < $this->getSize(); $i++) {
+        $vectorSize = $this->getSize();
+
+        for ($i = 0; $i < $vectorSize; ++$i) {
             $this->getElement($i)->divide($length);
         }
 
