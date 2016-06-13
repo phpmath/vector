@@ -20,6 +20,35 @@ class VectorTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('[2.0000000000, 4.0000000000, 6.0000000000]', (string)$vector1);
     }
 
+    public function testAddNullVector()
+    {
+        // Arrange
+        $vector1 = new Vector(array(1.0, 2.0, 3.0));
+        $vector2 = new Vector(array(0.0, 0.0, 0.0));
+
+        // Act
+        $vector1->add($vector2);
+
+        // Assert
+        $expected = new Vector(array(1.0, 2.0, 3.0));
+        $this->assertEquals($expected, $vector1);
+    }
+    
+    public function testAddIsCommutative()
+    {
+        // Arrange
+        $vector1 = new Vector(array(1.0, 2.0, 3.0));
+        $vector2 = new Vector(array(11.11, 12.12, 13.13));
+        $vector3 = new Vector(array(1.0, 2.0, 3.0));
+
+        // Act
+        $vector1->add($vector2);
+        $vector2->add($vector3);
+
+        // Assert
+        $this->assertEquals($vector2, $vector1);
+    }
+    
     /**
      * @expectedException InvalidArgumentException
      */
@@ -31,9 +60,6 @@ class VectorTest extends PHPUnit_Framework_TestCase
 
         // Act
         $vector1->add($vector2);
-
-        // Assert
-        // ...
     }
 
     public function testConjugate()
@@ -62,6 +88,62 @@ class VectorTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('77.0000000000', $dotProduct);
     }
 
+    public function testDotProductWithNullVector()
+    {
+        // Arrange
+        $vector1 = new Vector(array(4, 5, 6));
+        $vector2 = new Vector(array(0, 0, 0));
+
+        // Act
+        $dotProduct = $vector1->dotProduct($vector2);
+
+        // Assert
+        $this->assertInstanceOf('PHP\Math\BigNumber\BigNumber', $dotProduct);
+        $this->assertEquals('0.0', $dotProduct);
+    }
+
+    public function testDotProductOrthogonal()
+    {
+        // Arrange
+        $vector1 = new Vector(array(12.3, 20.22, 0));
+        $vector2 = new Vector(array(0, 0, -100.100));
+
+        // Act
+        $dotProduct = $vector1->dotProduct($vector2);
+
+        // Assert
+        $this->assertInstanceOf('PHP\Math\BigNumber\BigNumber', $dotProduct);
+        $this->assertEquals('0.0', $dotProduct);
+    }
+    
+    public function testDotProductAntiParallel()
+    {
+        // Arrange
+        $vector1 = new Vector(array(1, 2, 3));
+        $vector2 = new Vector(array(-1, -2, -3));
+
+        // Act
+        $dotProduct = $vector1->dotProduct($vector2);
+
+        // Assert
+        $this->assertInstanceOf('PHP\Math\BigNumber\BigNumber', $dotProduct);
+        $this->assertEquals('-14.0', $dotProduct);
+    }
+    
+    public function testDotProductIsCommutative()
+    {
+        // Arrange
+        $vector1 = new Vector(array(0, 2, 3));
+        $vector2 = new Vector(array(1, 5, 7));
+
+        // Act
+        $dotProduct12 = $vector1->dotProduct($vector2);
+        $dotProduct21 = $vector2->dotProduct($vector1);
+
+        // Assert
+        $this->assertEquals($dotProduct21, $dotProduct12);
+    }
+        
     /**
      * @expectedException InvalidArgumentException
      */
@@ -73,9 +155,6 @@ class VectorTest extends PHPUnit_Framework_TestCase
 
         // Act
         $vector1->dotProduct($vector2);
-
-        // Assert
-        // ...
     }
 
     public function testGetLength()
@@ -189,8 +268,5 @@ class VectorTest extends PHPUnit_Framework_TestCase
 
         // Act
         $vector1->subtract($vector2);
-
-        // Assert
-        // ...
     }
 }
