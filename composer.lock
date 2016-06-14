@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "148c828b8a3096960261e071692e8452",
-    "content-hash": "d684f2217f76cb641b73fb18490343ac",
+    "hash": "21602bb06b8c611bd1c40ee62279a74c",
+    "content-hash": "b8215acd0ef2df37f56fff272306d9ba",
     "packages": [
         {
             "name": "phpmath/bignumber",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmath/bignumber.git",
-                "reference": "5ff3d4a2379c1e80f9d036712fb3003331f5a024"
+                "reference": "b11b3c228cc64256442f803b4a6210fc45a8706c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/5ff3d4a2379c1e80f9d036712fb3003331f5a024",
-                "reference": "5ff3d4a2379c1e80f9d036712fb3003331f5a024",
+                "url": "https://api.github.com/repos/phpmath/bignumber/zipball/b11b3c228cc64256442f803b4a6210fc45a8706c",
+                "reference": "b11b3c228cc64256442f803b4a6210fc45a8706c",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "bignumber",
                 "math"
             ],
-            "time": "2016-06-13 13:23:47"
+            "time": "2016-06-14 20:51:46"
         }
     ],
     "packages-dev": [
