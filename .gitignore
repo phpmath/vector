@@ -1,2 +1,9 @@
-build/
-vendor/
+/build/
+/coverage/
+/vendor/
+/composer.lock
+/composer.local.json
+/composer.local.lock
+/.phpunit.cache
+/.phpstan.cache
+/.phpcs-cache

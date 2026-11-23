@@ -1,33 +1,56 @@
 {
     "name": "phpmath/vector",
-    "description": "A PHP library to work with vectors.",
+    "type": "library",
+    "description": "A PHP library to work with immutable vectors.",
     "keywords": [
+        "phpmath",
         "vector",
-        "math"
+        "math",
+        "php8"
     ],
+    "homepage": "https://github.com/phpmath/vector",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Walter Tamboer",
+            "homepage": "https://waltertamboer.nl",
+            "role": "Developer"
+        }
+    ],
     "require": {
-        "php": ">=5.5.9",
-        "phpmath/bignumber": "^1.2"
+        "php": "^8.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.5"
+        "phpmath/coding-standard": "^2.0",
+        "phpstan/phpstan": "^2.3",
+        "phpunit/phpunit": "^13.4"
     },
     "autoload": {
         "psr-4": {
-            "PHP\\Math\\Vector\\": "src"
+            "PHPMath\\Vector\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PHP\\Math\\": "tests"
+            "PHPMath\\Vector\\Tests\\": "tests/unit"
         }
     },
-    "authors": [
-        {
-            "name": "Walter Tamboer",
-            "homepage": "http://www.waltertamboer.nl",
-            "role": "Developer"
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --coverage-html build/phpunit-coverage/"
+        ],
+        "check-style": "vendor/bin/phpcs",
+        "fix-style": "vendor/bin/phpcbf",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "process-timeout": 5000,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
-    ]
+    }
 }

@@ -1,83 +1,42 @@
 <?php
+
 /**
- * This file is part of phpmath/vector. (https://github.com/phpmath/vector)
+ * phpmath / vector (https://github.com/phpmath/vector)
  *
  * @link https://github.com/phpmath/vector for the canonical source repository
- * @copyright Copyright (c) 2015-2016 phpmath. (https://github.com/phpmath/)
- * @license https://raw.githubusercontent.com/phpmath/vector/master/LICENSE.md MIT
  */
 
-namespace PHP\Math\Vector;
+declare(strict_types=1);
 
-use InvalidArgumentException;
+namespace PHPMath\Vector;
 
-class Vector2 extends Vector
+/**
+ * An immutable two dimensional vector.
+ */
+final readonly class Vector2 extends Vector
 {
-    /**
-     * Initializes a new instance of this class.
-     *
-     * @param float $x The X-component to set.
-     * @param float $y The Y-component to set.
-     */
-    public function __construct($x, $y)
+    public function __construct(float $x, float $y)
     {
-        parent::__construct(array());
-
-        $this->setX($x);
-        $this->setY($y);
+        parent::__construct([$x, $y]);
     }
 
-    /**
-     * Gets the X-component from this vector.
-     *
-     * @return float
-     */
-    public function getX()
+    public function getX(): float
     {
         return $this->getElement(0);
     }
 
-    /**
-     * Sets the X-component in this vector.
-     *
-     * @param float $x The X-component to set
-     */
-    public function setX($x)
+    public function withX(float $x): self
     {
-        $this->setElement(0, $x);
+        return new self($x, $this->getY());
     }
 
-    /**
-     * Gets the Y-component from this vector.
-     *
-     * @return float
-     */
-    public function getY()
+    public function getY(): float
     {
         return $this->getElement(1);
     }
 
-    /**
-     * Sets the Y-component in this vector.
-     *
-     * @param float $y The Y-component to set
-     */
-    public function setY($y)
+    public function withY(float $y): self
     {
-        $this->setElement(1, $y);
-    }
-
-    /**
-     * Validates the index.
-     *
-     * @param int $index The index to validate.
-     * @param bool $indexShouldExists Whether or not the index should exists.
-     * @throws InvalidArgumentException Thrown when the index is invalid.
-     */
-    protected function validateIndex($index, $indexShouldExists)
-    {
-        if ($index < 0 || $index >= 2) {
-            throw new InvalidArgumentException(sprintf('The index %d is invalid.', $index));
-        }
+        return new self($this->getX(), $y);
     }
 }

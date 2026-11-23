@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="phpmath/vector">
+    <description>The coding standards of phpmath/vector.</description>
+
+    <arg value="p"/>
+    <arg name="basepath" value="."/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="80"/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
+
+    <file>src/</file>
+    <file>tests/</file>
+
+    <rule ref="phpmath"/>
+
+    <!-- Vector is the one base class: it can be created directly and is extended by Vector2, Vector3 and Vector4. -->
+    <rule ref="SlevomatCodingStandard.Classes.RequireAbstractOrFinal">
+        <exclude-pattern>src/Vector.php</exclude-pattern>
+    </rule>
+</ruleset>

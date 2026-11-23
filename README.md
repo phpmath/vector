@@ -1,60 +1,87 @@
 # vector
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
+[![Software License][ico-license]](LICENSE)
+[![CI][ico-ci]][link-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![SensioLabsInsight][ico-sensio]][link-sensio]
 
 A PHP library to work with mathematical vectors.
 
-## Getting started
+## Documentation
 
-It's recommended to install this library via [Composer](https://getcomposer.org).
+The full documentation is at https://phpmath.github.io/vector/. Every release is described on the [releases page](https://github.com/phpmath/vector/releases).
 
-```json
-{
-    "require": {
-        "phpmath/vector": "^2.0"
-    }
-}
+## Install
+
+```bash
+composer require phpmath/vector
 ```
-
-The current master branch is considered stable. The badges on top of this document should confirm this.
 
 ## Requirements
 
-This library runs on PHP 5.5, PHP 5.6, PHP 7 and HHVM. This library depends on phpmath/bignumber
-which itself depends on the GMP extension.
+- PHP 8.4 or newer
+
+## Usage
+
+Every vector is an immutable value object. Operations never change the instance they are
+called on, they return a new instance.
+
+``` php
+use PHPMath\Vector\Vector;
+use PHPMath\Vector\Vector3;
+
+$a = new Vector3(1, 0, 0);
+$b = new Vector3(0, 1, 0);
+
+$cross = $a->crossProduct($b); // Vector3 [0, 0, 1]
+$sum = $a->add($b);            // Vector3 [1, 1, 0]
+$angle = $a->angleBetween($b); // pi / 2
+
+$vector = new Vector([3, 4]);
+echo $vector->getLength();     // 5
+```
 
 ## Features
 
-This library supports the following operations:
+* `Vector` (any number of components), `Vector2`, `Vector3` and `Vector4`.
+* Adding, subtracting, scaling and negating .
+* Dot product, cross product (`Vector3`) and the angle between two vectors.
+* Length, squared length and normalization.
+* `Vector4` for homogeneous coordinates, with `fromVector3()`, `toVector3()` and `project()`.
+* Replacing a component with `withElement()` (`withX()`, `withY()` and `withZ()`), which returns a copy.
 
-* Fully unit tested.
-* Basic classes such as Tuple, Vector, Vector2 and Vector3.
-* Basic operations such as adding, scaling and subtracting.
-* Performing dotProduct and crossProduct operations.
-* Normalization
-* Conjugate (negate - reverse)
+## Development
+
+```bash
+composer test
+composer test-coverage
+composer analyse
+composer check-style
+composer fix-style
+```
+
+## Contributing
+
+All contributions are welcome. Open an issue or a pull request on GitHub. Please follow the coding standard and add tests.
+
+## Security
+
+If you discover a security issue, please create an issue in the issue tracker.
+
+## Credits
+
+- [Walter Tamboer](https://github.com/waltertamboer)
+- [All contributors](https://github.com/phpmath/vector/graphs/contributors)
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/phpmath/vector.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/phpmath/vector/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/phpmath/vector.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/phpmath/vector.svg?style=flat-square
+[ico-ci]: https://img.shields.io/github/actions/workflow/status/phpmath/vector/ci.yml?branch=master&style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/phpmath/vector.svg?style=flat-square
-[ico-sensio]: https://img.shields.io/sensiolabs/i/543e6009-49ee-4239-91c4-985cfdd32d50.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/phpmath/vector
-[link-travis]: https://travis-ci.org/phpmath/vector
-[link-scrutinizer]: https://scrutinizer-ci.com/g/phpmath/vector/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/phpmath/vector
-[link-downloads]: https://packagist.org/packages/phpmath/vector
-[link-sensio]: https://insight.sensiolabs.com/projects/543e6009-49ee-4239-91c4-985cfdd32d50
+[link-ci]: https://github.com/phpmath/vector/actions/workflows/ci.yml
+[link-downloads]: https://packagist.org/packages/phpmath/vector/stats
