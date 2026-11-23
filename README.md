@@ -9,7 +9,7 @@ A PHP library to work with mathematical vectors.
 
 ## Documentation
 
-The full documentation is at https://phpmath.github.io/vector/. Every release is described on the [releases page](https://github.com/phpmath/vector/releases).
+The full documentation is at https://phpmath.github.io/vector/. Every change is listed in the [changelog](CHANGELOG.md) and every release on the [releases page](https://github.com/phpmath/vector/releases).
 
 ## Install
 
